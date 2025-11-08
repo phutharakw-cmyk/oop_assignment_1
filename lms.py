@@ -4,17 +4,24 @@ books = []
 members = []
 borrowed_books = []
 
-def add_book(book_id, title, author, available_copies):
-    """Add a new book to the library"""
-    book = {
-        'id': book_id,
-        'title': title,
-        'author': author,
-        'available_copies': available_copies,
-        'total_copies': available_copies
-    }
-    books.append(book)
-    print(f"Book '{title}' added successfully!")
+class Book:
+    def __init__(self,book_id, title, author, available_copies):
+        self.book_id = book_id
+        self.title = title
+        self.author = author
+        self.available_copies  = available_copies        
+
+    def add_book(self):
+        """Add a new book to the library"""
+        book = {
+            'id': self.book_id,
+            'title': self.title,
+            'author': self.author,
+            'available_copies': self.available_copies,
+            'total_copies': self.available_copies
+        }
+        books.append(book)
+        print(f"Book '{self.title}' added successfully!")
 
 def add_member(member_id, name, email):
     """Register a new library member"""
@@ -136,10 +143,10 @@ def test_library_system():
     
     # Test 1: Add Books
     print("\n--- TEST 1: Adding Books ---")
-    add_book(1, "Python Crash Course", "Eric Matthes", 3)
-    add_book(2, "Clean Code", "Robert Martin", 2)
-    add_book(3, "The Pragmatic Programmer", "Hunt & Thomas", 1)
-    add_book(4, "Design Patterns", "Gang of Four", 2)
+    book_1 = Book(1, "Python Crash Course", "Eric Matthes", 3).add_book()
+    book_2 = Book(2, "Clean Code", "Robert Martin", 2).add_book()
+    book_3 = Book(3, "The Pragmatic Programmer", "Hunt & Thomas", 1).add_book()
+    book_4 = Book(4, "Design Patterns", "Gang of Four", 2).add_book()
     
     # Test 2: Add Members
     print("\n--- TEST 2: Registering Members ---")
