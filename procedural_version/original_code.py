@@ -4,41 +4,28 @@ books = []
 members = []
 borrowed_books = []
 
-class Book:
-    def __init__(self,book_id, title, author, available_copies):
-        self.book_id = book_id
-        self.title = title
-        self.author = author
-        self.available_copies  = available_copies        
+def add_book(book_id, title, author, available_copies):
+    """Add a new book to the library"""
+    book = {
+        'id': book_id,
+        'title': title,
+        'author': author,
+        'available_copies': available_copies,
+        'total_copies': available_copies
+    }
+    books.append(book)
+    print(f"Book '{title}' added successfully!")
 
-    def add_book(self):
-        """Add a new book to the library"""
-        book = {
-            'id': self.book_id,
-            'title': self.title,
-            'author': self.author,
-            'available_copies': self.available_copies,
-            'total_copies': self.available_copies
-        }
-        books.append(book)
-        print(f"Book '{self.title}' added successfully!")
-
-class Member:
-    def __init__(self,member_id, name, email):
-        self.member_id = member_id
-        self.name = name
-        self.email = email
-        
-    def add_member(self):
-        """Register a new library member"""
-        member = {
-            'id': self.member_id,
-            'name': self.name,
-            'email': self.email,
-            'borrowed_books': []
-        }
-        members.append(member)
-        print(f"Member '{self.name}' registered successfully!")
+def add_member(member_id, name, email):
+    """Register a new library member"""
+    member = {
+        'id': member_id,
+        'name': name,
+        'email': email,
+        'borrowed_books': []
+    }
+    members.append(member)
+    print(f"Member '{name}' registered successfully!")
 
 def find_book(book_id):
     """Find a book by ID"""
@@ -149,16 +136,16 @@ def test_library_system():
     
     # Test 1: Add Books
     print("\n--- TEST 1: Adding Books ---")
-    book_1 = Book(1, "Python Crash Course", "Eric Matthes", 3).add_book()
-    book_2 = Book(2, "Clean Code", "Robert Martin", 2).add_book()
-    book_3 = Book(3, "The Pragmatic Programmer", "Hunt & Thomas", 1).add_book()
-    book_4 = Book(4, "Design Patterns", "Gang of Four", 2).add_book()
+    add_book(1, "Python Crash Course", "Eric Matthes", 3)
+    add_book(2, "Clean Code", "Robert Martin", 2)
+    add_book(3, "The Pragmatic Programmer", "Hunt & Thomas", 1)
+    add_book(4, "Design Patterns", "Gang of Four", 2)
     
     # Test 2: Add Members
     print("\n--- TEST 2: Registering Members ---")
-    member_1 = Member(101, "Alice Smith", "alice@email.com").add_member()
-    member_2 = Member(102, "Bob Jones", "bob@email.com").add_member()
-    member_3 = Member(103, "Carol White", "carol@email.com").add_member()
+    add_member(101, "Alice Smith", "alice@email.com")
+    add_member(102, "Bob Jones", "bob@email.com")
+    add_member(103, "Carol White", "carol@email.com")
     
     # Test 3: Display Available Books
     print("\n--- TEST 3: Display Available Books ---")

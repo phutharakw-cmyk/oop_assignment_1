@@ -1,0 +1,124 @@
+============================================================
+LIBRARY MANAGEMENT SYSTEM - COMPREHENSIVE TEST
+============================================================
+
+--- TEST 1: Adding Books ---
+Book 'Python Crash Course' added successfully!
+Book 'Clean Code' added successfully!
+Book 'The Pragmatic Programmer' added successfully!
+Book 'Design Patterns' added successfully!
+
+--- TEST 2: Registering Members ---
+Member 'Alice Smith' registered successfully!
+Member 'Bob Jones' registered successfully!
+Member 'Carol White' registered successfully!
+
+--- TEST 3: Display Available Books ---
+
+=== Available Books ===
+Python Crash Course by Eric Matthes - 3 copies available
+Clean Code by Robert Martin - 2 copies available
+The Pragmatic Programmer by Hunt & Thomas - 1 copies available
+Design Patterns by Gang of Four - 2 copies available
+
+--- TEST 4: Successful Borrowing ---
+Alice Smith borrowed 'Python Crash Course'
+Alice Smith borrowed 'Clean Code'
+Bob Jones borrowed 'Python Crash Course'
+
+--- TEST 5: Display Member's Books ---
+
+=== Books borrowed by Alice Smith ===
+- Python Crash Course by Eric Matthes
+- Clean Code by Robert Martin
+
+=== Books borrowed by Bob Jones ===
+- Python Crash Course by Eric Matthes
+
+=== Books borrowed by Carol White ===
+No books currently borrowed
+
+--- TEST 6: Available Books After Borrowing ---
+
+=== Available Books ===
+Python Crash Course by Eric Matthes - 1 copies available
+Clean Code by Robert Martin - 1 copies available
+The Pragmatic Programmer by Hunt & Thomas - 1 copies available
+Design Patterns by Gang of Four - 2 copies available
+
+--- TEST 7: Borrowing Last Copy ---
+Carol White borrowed 'The Pragmatic Programmer'
+
+=== Available Books ===
+Python Crash Course by Eric Matthes - 1 copies available
+Clean Code by Robert Martin - 1 copies available
+Design Patterns by Gang of Four - 2 copies available
+
+--- TEST 8: Attempting to Borrow Unavailable Book ---
+Error: No copies available!
+
+--- TEST 9: Testing Borrowing Limit (3 books max) ---
+Alice Smith borrowed 'Design Patterns'
+
+=== Books borrowed by Alice Smith ===
+- Python Crash Course by Eric Matthes
+- Clean Code by Robert Martin
+- Design Patterns by Gang of Four
+Error: No copies available!
+
+--- TEST 10: Returning Books ---
+Alice Smith returned 'Python Crash Course'
+Bob Jones returned 'Python Crash Course'
+
+=== Books borrowed by Alice Smith ===
+- Clean Code by Robert Martin
+- Design Patterns by Gang of Four
+
+=== Available Books ===
+Python Crash Course by Eric Matthes - 3 copies available
+Clean Code by Robert Martin - 1 copies available
+Design Patterns by Gang of Four - 1 copies available
+
+--- TEST 11: Attempting Invalid Return ---
+Error: This member hasn't borrowed this book!
+
+--- TEST 12: Return and Re-borrow ---
+Carol White returned 'The Pragmatic Programmer'
+Bob Jones borrowed 'The Pragmatic Programmer'
+
+=== Books borrowed by Bob Jones ===
+- The Pragmatic Programmer by Hunt & Thomas
+
+--- TEST 13: Error Handling ---
+Error: Member not found!
+Error: Book not found!
+Error: Member or book not found!
+Error: Member not found!
+
+--- TEST 14: Final Library Status ---
+
+All Borrowed Books:
+  Alice Smith has 'Clean Code'
+  Alice Smith has 'Design Patterns'
+  Bob Jones has 'The Pragmatic Programmer'
+
+All Members and Their Books:
+
+Alice Smith (101):
+  - Clean Code
+  - Design Patterns
+
+Bob Jones (102):
+  - The Pragmatic Programmer
+
+Carol White (103):
+  (No books borrowed)
+
+=== Available Books ===
+Python Crash Course by Eric Matthes - 3 copies available
+Clean Code by Robert Martin - 1 copies available
+Design Patterns by Gang of Four - 1 copies available
+
+============================================================
+TEST COMPLETE
+============================================================
