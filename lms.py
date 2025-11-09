@@ -23,16 +23,22 @@ class Book:
         books.append(book)
         print(f"Book '{self.title}' added successfully!")
 
-def add_member(member_id, name, email):
-    """Register a new library member"""
-    member = {
-        'id': member_id,
-        'name': name,
-        'email': email,
-        'borrowed_books': []
-    }
-    members.append(member)
-    print(f"Member '{name}' registered successfully!")
+class Member:
+    def __init__(self,member_id, name, email):
+        self.member_id = member_id
+        self.name = name
+        self.email = email
+        
+    def add_member(self):
+        """Register a new library member"""
+        member = {
+            'id': self.member_id,
+            'name': self.name,
+            'email': self.email,
+            'borrowed_books': []
+        }
+        members.append(member)
+        print(f"Member '{self.name}' registered successfully!")
 
 def find_book(book_id):
     """Find a book by ID"""
@@ -150,9 +156,9 @@ def test_library_system():
     
     # Test 2: Add Members
     print("\n--- TEST 2: Registering Members ---")
-    add_member(101, "Alice Smith", "alice@email.com")
-    add_member(102, "Bob Jones", "bob@email.com")
-    add_member(103, "Carol White", "carol@email.com")
+    member_1 = Member(101, "Alice Smith", "alice@email.com").add_member()
+    member_2 = Member(102, "Bob Jones", "bob@email.com").add_member()
+    member_3 = Member(103, "Carol White", "carol@email.com").add_member()
     
     # Test 3: Display Available Books
     print("\n--- TEST 3: Display Available Books ---")
